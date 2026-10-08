@@ -6,11 +6,9 @@ import urllib.request
 
 app = Flask(__name__)
 
-# ---------- Face detector (bbox only, bundled with opencv) ----------
 cascade_path = os.path.join(cv2.data.haarcascades, "haarcascade_frontalface_default.xml")
 face_cascade = cv2.CascadeClassifier(cascade_path)
 
-# ---------- Emotion model (ONNX FER+, real trained classifier) ----------
 MODEL_PATH = "emotion-ferplus-8.onnx"
 MODEL_URL = "https://github.com/onnx/models/raw/main/validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.onnx"
 
